@@ -12,11 +12,11 @@ int _actualPageIndex = 0;
 
 
 pageContent menu[]={
-	{Home, "Home", ActionControl_PerformSpaceOdyssey},
-	{SpaceOdyssey, "Space", ActionControl_PerformSpaceOdyssey},
-	{Breathing, "Breath like Vader",ActionControl_PerformBreathing},
-	{Father, "I am your father", ActionControl_PerformIAmYourFather},
-	{Help, "Help", MenuLogic_ShowAllMenuPages}
+	{Home, 			"Home ", 				ActionControl_PerformSpaceOdyssey},
+	{SpaceOdyssey, 	"Space ", 				ActionControl_PerformSpaceOdyssey},
+	{Breathing, 	"Breath like Vader ",	ActionControl_PerformBreathing},
+	{Father, 		"I am your father ", 	ActionControl_PerformIAmYourFather},
+	{Help, 			"Help ", 				MenuLogic_ShowAllMenuPages}
 };
 
 

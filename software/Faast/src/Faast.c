@@ -11,12 +11,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <wiringPi.h>
 #include "MenuLogic/MenuLogic.h"
+
 
 int main(void)
 {
 	char inputBuffer[5];
 	puts("Project Faast, have fun:");
+
+
+	// Setup gpios
+	//wiringPiSetupGpio();
+
+	wiringPiSetupGpio();
+
+
+
+
 
 
 	while(1)
