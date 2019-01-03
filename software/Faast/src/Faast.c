@@ -25,12 +25,13 @@ int main(void)
 
 		if(strcmp("d\n\0", inputBuffer) == 0)
 		{
-			printf("actual Page: %d ", MenuLogic_NextPage());
-			printf("Text: %s", MenuLogic_ReturnMenuTextOfActualPage());
+			MenuLogic_NextPage();
+			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
 		}
 		else if(strcmp("a\n\0", inputBuffer) == 0)
 		{
-			printf("actual Page: %d", MenuLogic_PreviousPage());
+			MenuLogic_PreviousPage();
+			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
 		}
 		else if(strcmp("s\n\0", inputBuffer) == 0)
 		{

@@ -15,15 +15,19 @@ MenuPages actualPage = Home;
 
 void SpaceOdysseyAction(void)
 {
-	system("omxplayer /home/pi/Faast/sounds/demo.wav");
+	system("omxplayer /home/pi/Faast/sounds/SpaceOdyssey.wav");
 }
 
+void IAmYourFatherAction(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/IAmYourFather.wav");
+}
 
 
 pageContent menu1[]={
 	{Home, "Home", SpaceOdysseyAction},
 	{SpaceOdyssey, "Space", SpaceOdysseyAction},
-	{InPeace, "Peace", SpaceOdysseyAction}
+	{Father, "I am your father", IAmYourFatherAction}
 };
 
 

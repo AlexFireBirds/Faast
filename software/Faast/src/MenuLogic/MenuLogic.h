@@ -12,7 +12,7 @@ typedef enum menuPages
 {
 	Home,
 	SpaceOdyssey,
-	InPeace,
+	Father,
 	NumberOfMenuPages
 } MenuPages;
 
