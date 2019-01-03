@@ -8,8 +8,8 @@
 #include "MenuLogic.h"
 #include "../ActionControl/ActionControl.h"
 
-MenuPages initPage = Home;
-MenuPages actualPage = Home;
+int _actualPageIndex = 0;
+
 
 pageContent menu[]={
 	{Home, "Home", ActionControl_PerformSpaceOdyssey},
@@ -20,56 +20,41 @@ pageContent menu[]={
 };
 
 
-
-MenuPages MenuLogic_NextPage(void)
+void MenuLogic_NextPage(void)
 {
-	actualPage++;
-	if(actualPage == NumberOfMenuPages)
+	int numberOfMenuPages = sizeof(menu)/sizeof(pageContent);
+
+	_actualPageIndex++;
+
+	if(_actualPageIndex == numberOfMenuPages)
 	{
-		actualPage = Home;
+		_actualPageIndex = 0;
 	}
-	return actualPage;
 }
 
-MenuPages MenuLogic_PreviousPage(void)
+void MenuLogic_PreviousPage(void)
 {
-	if(actualPage == Home)
+	int numberOfMenuPages = sizeof(menu)/sizeof(pageContent);
+
+	if(_actualPageIndex == 0)
 	{
-		actualPage = NumberOfMenuPages - 1;
+		_actualPageIndex = numberOfMenuPages - 1;
 	}
 	else
 	{
-		actualPage--;
+		_actualPageIndex--;
 	}
-	return actualPage;
 }
 
 
 char* MenuLogic_ReturnMenuTextOfActualPage(void)
 {
-	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);
-
-	for(int i = 0; i < numberOfMenuEntries; i++)
-	{
-		if(menu[i].page == actualPage)
-		{
-			return menu[i].text;
-		}
-	}
-	return "No menu entry!";
+	return menu[_actualPageIndex].text;
 }
 
 void MenuLogic_ExecuteActualPageAction(void)
 {
-	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);
-
-	for(int i = 0; i < numberOfMenuEntries; i++)
-	{
-		if(menu[i].page == actualPage)
-		{
-			menu[i].action();
-		}
-	}
+	menu[_actualPageIndex].action();
 }
 
 void MenuLogic_ShowAllMenuPages(void)

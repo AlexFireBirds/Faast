@@ -29,9 +29,9 @@ typedef struct
 
 
 
-MenuPages MenuLogic_NextPage(void);
+void MenuLogic_NextPage(void);
 
-MenuPages MenuLogic_PreviousPage(void);
+void MenuLogic_PreviousPage(void);
 
 char* MenuLogic_ReturnMenuTextOfActualPage(void);
 
