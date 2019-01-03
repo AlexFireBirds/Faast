@@ -11,7 +11,7 @@
 MenuPages initPage = Home;
 MenuPages actualPage = Home;
 
-pageContent menu1[]={
+pageContent menu[]={
 	{Home, "Home", ActionControl_PerformSpaceOdyssey},
 	{SpaceOdyssey, "Space", ActionControl_PerformSpaceOdyssey},
 	{Breathing, "Breath like Vader",ActionControl_PerformBreathing},
@@ -47,13 +47,13 @@ MenuPages MenuLogic_PreviousPage(void)
 
 char* MenuLogic_ReturnMenuTextOfActualPage(void)
 {
-	int numberOfMenuEntries = sizeof(menu1)/sizeof(pageContent);
+	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);
 
 	for(int i = 0; i < numberOfMenuEntries; i++)
 	{
-		if(menu1[i].page == actualPage)
+		if(menu[i].page == actualPage)
 		{
-			return menu1[i].text;
+			return menu[i].text;
 		}
 	}
 	return "No menu entry!";
@@ -61,23 +61,23 @@ char* MenuLogic_ReturnMenuTextOfActualPage(void)
 
 void MenuLogic_ExecuteActualPageAction(void)
 {
-	int numberOfMenuEntries = sizeof(menu1)/sizeof(pageContent);
+	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);
 
 	for(int i = 0; i < numberOfMenuEntries; i++)
 	{
-		if(menu1[i].page == actualPage)
+		if(menu[i].page == actualPage)
 		{
-			menu1[i].action();
+			menu[i].action();
 		}
 	}
 }
 
 void MenuLogic_ShowAllMenuPages(void)
 {
-	int numberOfMenuEntries = sizeof(menu1)/sizeof(pageContent);
+	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);
 
 	for(int i = 0; i < numberOfMenuEntries; i++)
 	{
-		printf("Page: %d: %s \n", menu1[i].page, menu1[i].text);
+		printf("Page: %d: %s \n", menu[i].page, menu[i].text);
 	}
 }
