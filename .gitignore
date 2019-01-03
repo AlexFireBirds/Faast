@@ -1,0 +1,27 @@
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.o
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# Eclipse Core
+#.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific (C/C++ Development Tooling)
+#.cproject
+
+# CDT- autotools 
+.autotools
