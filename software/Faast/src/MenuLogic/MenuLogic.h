@@ -12,7 +12,9 @@ typedef enum menuPages
 {
 	Home,
 	SpaceOdyssey,
+	Breathing,
 	Father,
+	Help,
 	NumberOfMenuPages
 } MenuPages;
 
@@ -34,5 +36,7 @@ MenuPages MenuLogic_PreviousPage(void);
 char* MenuLogic_ReturnMenuTextOfActualPage(void);
 
 void MenuLogic_ExecuteActualPageAction(void);
+
+void MenuLogic_ShowAllMenuPages(void);
 
 #endif /* MENULOGIC_MENULOGIC_H_ */

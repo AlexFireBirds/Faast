@@ -4,30 +4,19 @@
  *  Created on: 3 Jan 2019
  *      Author: pi
  */
+#include <stdio.h>
 #include "MenuLogic.h"
-
-
-#include <stdlib.h>
+#include "../ActionControl/ActionControl.h"
 
 MenuPages initPage = Home;
 MenuPages actualPage = Home;
 
-
-void SpaceOdysseyAction(void)
-{
-	system("omxplayer /home/pi/Faast/sounds/SpaceOdyssey.wav");
-}
-
-void IAmYourFatherAction(void)
-{
-	system("omxplayer /home/pi/Faast/sounds/IAmYourFather.wav");
-}
-
-
 pageContent menu1[]={
-	{Home, "Home", SpaceOdysseyAction},
-	{SpaceOdyssey, "Space", SpaceOdysseyAction},
-	{Father, "I am your father", IAmYourFatherAction}
+	{Home, "Home", ActionControl_PerformSpaceOdyssey},
+	{SpaceOdyssey, "Space", ActionControl_PerformSpaceOdyssey},
+	{Breathing, "Breath like Vader",ActionControl_PerformBreathing},
+	{Father, "I am your father", ActionControl_PerformIAmYourFather},
+	{Help, "Help", MenuLogic_ShowAllMenuPages}
 };
 
 
@@ -67,7 +56,7 @@ char* MenuLogic_ReturnMenuTextOfActualPage(void)
 			return menu1[i].text;
 		}
 	}
-	return "empty";
+	return "No menu entry!";
 }
 
 void MenuLogic_ExecuteActualPageAction(void)
@@ -80,5 +69,15 @@ void MenuLogic_ExecuteActualPageAction(void)
 		{
 			menu1[i].action();
 		}
+	}
+}
+
+void MenuLogic_ShowAllMenuPages(void)
+{
+	int numberOfMenuEntries = sizeof(menu1)/sizeof(pageContent);
+
+	for(int i = 0; i < numberOfMenuEntries; i++)
+	{
+		printf("Page: %d: %s \n", menu1[i].page, menu1[i].text);
 	}
 }

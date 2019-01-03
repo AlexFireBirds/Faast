@@ -16,7 +16,7 @@
 int main(void)
 {
 	char inputBuffer[5];
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	puts("Project Faast, have fun:");
 
 
 	while(1)
@@ -35,20 +35,14 @@ int main(void)
 		}
 		else if(strcmp("s\n\0", inputBuffer) == 0)
 		{
-			printf("Perform Action!");
+			printf("\nPerform Action!\n");
 			MenuLogic_ExecuteActualPageAction();
 		}
-
-
-//
-//		printf("input: %s", inputBuffer);
-//
-//		printf("actual Page: %d", MenuLogic_NextPage());
-
+		else if(strcmp("h\n\0", inputBuffer) == 0)
+		{
+			MenuLogic_ShowAllMenuPages();
+		}
 	}
-
-
-	system("omxplayer /home/pi/Faast/sounds/demo.wav");
 
 	return EXIT_SUCCESS;
 }
