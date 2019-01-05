@@ -13,6 +13,8 @@
 #include <string.h>
 #include <wiringPi.h>
 #include "MenuLogic/MenuLogic.h"
+#include "GpioControl/GpioControl.h"
+
 
 
 int main(void)
@@ -21,14 +23,24 @@ int main(void)
 	puts("Project Faast, have fun:");
 
 
-	// Setup gpios
-	//wiringPiSetupGpio();
+	// Initialize gpio control
+	GpioControl_Initialize();
 
-	wiringPiSetupGpio();
-
-
-
-
+// TEST: cha
+//	while(1)
+//	{
+//		if(digitalRead(7) == 1)
+//		{
+//			printf("High\n");
+//			MenuLogic_NextPage();
+//			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
+//		}
+//		else
+//		{
+//			printf("Low\n");
+//		}
+//		delay(500);
+//	}
 
 
 	while(1)
@@ -54,6 +66,7 @@ int main(void)
 		{
 			MenuLogic_ShowAllMenuPages();
 		}
+		delay(500);
 	}
 
 	return EXIT_SUCCESS;
