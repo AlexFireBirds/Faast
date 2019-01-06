@@ -26,6 +26,7 @@ int main(void)
 	// Initialize gpio control
 	GpioControl_Initialize();
 
+
 // TEST: cha
 //	while(1)
 //	{
@@ -42,7 +43,6 @@ int main(void)
 //		delay(500);
 //	}
 
-
 	while(1)
 	{
 		fgets(inputBuffer, 5, stdin);
@@ -50,12 +50,10 @@ int main(void)
 		if(strcmp("d\n\0", inputBuffer) == 0)
 		{
 			MenuLogic_NextPage();
-			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
 		}
 		else if(strcmp("a\n\0", inputBuffer) == 0)
 		{
 			MenuLogic_PreviousPage();
-			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
 		}
 		else if(strcmp("s\n\0", inputBuffer) == 0)
 		{
@@ -66,7 +64,6 @@ int main(void)
 		{
 			MenuLogic_ShowAllMenuPages();
 		}
-		delay(500);
 	}
 
 	return EXIT_SUCCESS;

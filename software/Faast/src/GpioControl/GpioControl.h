@@ -9,6 +9,8 @@
 #define GPIOCONTROL_GPIOCONTROL_H_
 
 #define BUTTON_RIGHT_ARROW 7
+#define BUTTON_LEFT_ARROW
+#define BUTTON_ENTER
 
 
 void GpioControl_Initialize(void);

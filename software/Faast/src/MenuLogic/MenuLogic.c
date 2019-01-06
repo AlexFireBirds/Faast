@@ -30,6 +30,7 @@ void MenuLogic_NextPage(void)
 	{
 		_actualPageIndex = 0;
 	}
+	printf("%s ", menu[_actualPageIndex].text);
 }
 
 void MenuLogic_PreviousPage(void)
@@ -44,6 +45,7 @@ void MenuLogic_PreviousPage(void)
 	{
 		_actualPageIndex--;
 	}
+	printf("%s ", menu[_actualPageIndex].text);
 }
 
 
