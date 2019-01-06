@@ -19,7 +19,6 @@ pageContent menu[]={
 	{Help, 			"Help ", 				MenuLogic_ShowAllMenuPages}
 };
 
-
 void MenuLogic_NextPage(void)
 {
 	int numberOfMenuPages = sizeof(menu)/sizeof(pageContent);

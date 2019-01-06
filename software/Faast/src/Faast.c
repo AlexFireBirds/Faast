@@ -26,23 +26,6 @@ int main(void)
 	// Initialize gpio control
 	GpioControl_Initialize();
 
-
-// TEST: cha
-//	while(1)
-//	{
-//		if(digitalRead(7) == 1)
-//		{
-//			printf("High\n");
-//			MenuLogic_NextPage();
-//			printf("%s", MenuLogic_ReturnMenuTextOfActualPage());
-//		}
-//		else
-//		{
-//			printf("Low\n");
-//		}
-//		delay(500);
-//	}
-
 	while(1)
 	{
 		fgets(inputBuffer, 5, stdin);
