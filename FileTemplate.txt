@@ -1,0 +1,79 @@
+/* === INCLUDE FILES =============================================================== */
+#include "SystemType.h"
+#include "GpioControl.h"
+#include "ErrorEventHandler.h"
+#include "TraceEventHandler.h"
+#include "GpioEventHandler.h"
+#include "GpioInputEventHandler.h"
+#include "GpioOutputEventHandler.h"
+#include "GpioDefinitions.h"
+#include "MachineConfigControl.h"
+#include "MachineConfigEventHandler.h"
+#include "MaterialChangeEventHandler.h"
+#include "BadCrimpEventHandler.h"
+#include "CipControl.h"
+
+
+/* === TYPES ======================================================================= */
+typedef void (* GpioOutputSwitchHandlerType)(GpioOutputType gpioOutput);
+
+typedef struct
+{
+    GpioEventType GpioEvent;
+    GpioInputEventType *GpioInputEvent;
+} GpioInputTableType;
+
+typedef struct
+{
+    GpioOutputEventType *GpioOutputEvent;
+    GpioOutputType GpioOutput;
+    GpioOutputSwitchHandlerType GpioOutputSwitchHandler;
+} GpioOutputTableType;
+
+
+/* === LOCAL VARIABLES ============================================================= */
+static GpioInputConfigurationType _gpioInputConfigurations[GpioInputNumberOf];
+static GpioOutputConfigurationType _gpioOutputConfigurations[GpioOutputNumberOf];
+
+
+/* === CONSTANTS =================================================================== */
+static const GpioInputTableType GpioInputTable[] =
+{
+    { GpioEventPositiveEdgeInput01, &_gpioInputConfigurations[GpioInput01].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput01, &_gpioInputConfigurations[GpioInput01].EventNegativeEdge },
+    { GpioEventPositiveEdgeInput02, &_gpioInputConfigurations[GpioInput02].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput02, &_gpioInputConfigurations[GpioInput02].EventNegativeEdge },
+    { GpioEventPositiveEdgeInput03, &_gpioInputConfigurations[GpioInput03].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput03, &_gpioInputConfigurations[GpioInput03].EventNegativeEdge },
+    { GpioEventPositiveEdgeInput04, &_gpioInputConfigurations[GpioInput04].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput04, &_gpioInputConfigurations[GpioInput04].EventNegativeEdge },
+    { GpioEventPositiveEdgeInput05, &_gpioInputConfigurations[GpioInput05].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput05, &_gpioInputConfigurations[GpioInput05].EventNegativeEdge },
+    { GpioEventPositiveEdgeInput06, &_gpioInputConfigurations[GpioInput06].EventPositiveEdge },
+    { GpioEventNegativeEdgeInput06, &_gpioInputConfigurations[GpioInput06].EventNegativeEdge },
+};
+static const UInt16 GpioInputTableSize = sizeof(GpioInputTable) / sizeof(GpioInputTableType);
+
+static const GpioOutputTableType GpioOutputTable[] =
+{
+    { &_gpioOutputConfigurations[GpioOutput01].EventSwitchOn, GpioOutput01, CipControl_StripDeviceSwitchOnOutput },
+    { &_gpioOutputConfigurations[GpioOutput01].EventSwitchOff, GpioOutput01, CipControl_StripDeviceSwitchOffOutput },
+    { &_gpioOutputConfigurations[GpioOutput02].EventSwitchOn, GpioOutput02, CipControl_StripDeviceSwitchOnOutput },
+    { &_gpioOutputConfigurations[GpioOutput02].EventSwitchOff, GpioOutput02, CipControl_StripDeviceSwitchOffOutput },
+    { &_gpioOutputConfigurations[GpioOutput03].EventSwitchOn, GpioOutput03, CipControl_StripDeviceSwitchOnOutput },
+    { &_gpioOutputConfigurations[GpioOutput03].EventSwitchOff, GpioOutput03, CipControl_StripDeviceSwitchOffOutput },
+};
+static const UInt16 GpioOutputTableSize = sizeof(GpioOutputTable) / sizeof(GpioOutputTableType);
+
+
+/* ---------------------------------------------------------------------------------
+ Function       : LoadGpioConfigurations
+ -----------------------------------------------------------------------------------
+ Description    : Loads the gpio configurations from the database
+
+ Parameters     : -
+
+ Return values  : -
+ ----------------------------------------------------------------------------------- */
+static void LoadGpioConfigurations(void)
+
