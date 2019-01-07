@@ -8,6 +8,8 @@
 #ifndef ACTIONCONTROL_ACTIONCONTROL_H_
 #define ACTIONCONTROL_ACTIONCONTROL_H_
 
+
+/* === PROTOTYPES ================================================================== */
 void ActionControl_PerformSpaceOdyssey(void);
 
 void ActionControl_PerformIAmYourFather(void);

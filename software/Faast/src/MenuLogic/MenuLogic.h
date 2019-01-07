@@ -8,6 +8,8 @@
 #ifndef MENULOGIC_MENULOGIC_H_
 #define MENULOGIC_MENULOGIC_H_
 
+
+/* === TYPES ======================================================================= */
 typedef enum menuPages
 {
 	Home,
@@ -28,7 +30,7 @@ typedef struct
 } pageContent;
 
 
-
+/* === PROTOTYPES ================================================================== */
 void MenuLogic_NextPage(void);
 
 void MenuLogic_PreviousPage(void);
@@ -38,5 +40,6 @@ char* MenuLogic_ReturnMenuTextOfActualPage(void);
 void MenuLogic_ExecuteActualPageAction(void);
 
 void MenuLogic_ShowAllMenuPages(void);
+
 
 #endif /* MENULOGIC_MENULOGIC_H_ */

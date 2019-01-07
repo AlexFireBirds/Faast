@@ -8,6 +8,7 @@
  ============================================================================
  */
 
+/* === INCLUDE FILES =============================================================== */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,6 +27,13 @@ int main(void)
 	// Initialize gpio control
 	GpioControl_Initialize();
 
+	// Demo with hardware button inputs
+	while(1)
+	{
+		delay(1);
+	}
+
+	// Deno with keyboard inputs
 	while(1)
 	{
 		fgets(inputBuffer, 5, stdin);

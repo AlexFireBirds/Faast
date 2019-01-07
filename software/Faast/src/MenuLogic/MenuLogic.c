@@ -4,12 +4,15 @@
  *  Created on: 3 Jan 2019
  *      Author: pi
  */
+
+
+/* === INCLUDE FILES =============================================================== */
 #include <stdio.h>
 #include "MenuLogic.h"
 #include "../ActionControl/ActionControl.h"
 
+/* === LOCAL VARIABLES ============================================================= */
 int _actualPageIndex = 0;
-
 
 pageContent menu[]={
 	{Home, 			"Home ", 				ActionControl_PerformSpaceOdyssey},
@@ -18,6 +21,9 @@ pageContent menu[]={
 	{Father, 		"I am your father ", 	ActionControl_PerformIAmYourFather},
 	{Help, 			"Help ", 				MenuLogic_ShowAllMenuPages}
 };
+
+
+/* === CONSTANTS =================================================================== */
 
 void MenuLogic_NextPage(void)
 {
@@ -29,7 +35,7 @@ void MenuLogic_NextPage(void)
 	{
 		_actualPageIndex = 0;
 	}
-	printf("%s ", menu[_actualPageIndex].text);
+	printf("%s\n", menu[_actualPageIndex].text);
 }
 
 void MenuLogic_PreviousPage(void)
@@ -44,7 +50,7 @@ void MenuLogic_PreviousPage(void)
 	{
 		_actualPageIndex--;
 	}
-	printf("%s ", menu[_actualPageIndex].text);
+	printf("%s\n", menu[_actualPageIndex].text);
 }
 
 
