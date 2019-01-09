@@ -13,7 +13,7 @@
 #include "../MenuLogic/MenuLogic.h"
 
 
-/* === TYPES ======================================================================= */
+/* === DEFINES ===================================================================== */
 #define debounceTime 500
 
 
@@ -23,8 +23,7 @@ unsigned long lastPreviousPageInterrupt   	 = 0;
 unsigned long lastExecuteActionPageInterrupt = 0;
 
 
-/* === CONSTANTS =================================================================== */
-
+/* === DEFINITIONS ================================================================= */
 static void InterruptHandlerNextPage(void)
 {
 	unsigned long interruptTime = millis();

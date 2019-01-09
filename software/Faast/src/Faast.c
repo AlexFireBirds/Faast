@@ -16,13 +16,10 @@
 #include "MenuLogic/MenuLogic.h"
 #include "GpioControl/GpioControl.h"
 
-
-
 int main(void)
 {
 	char inputBuffer[5];
-	puts("Project Faast, have fun:");
-
+	puts("Project Faast, have fun:\n");
 
 	// Initialize gpio control
 	GpioControl_Initialize();
@@ -33,7 +30,7 @@ int main(void)
 		delay(1);
 	}
 
-	// Deno with keyboard inputs
+	// Demo with keyboard inputs
 	while(1)
 	{
 		fgets(inputBuffer, 5, stdin);

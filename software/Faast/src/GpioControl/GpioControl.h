@@ -8,7 +8,7 @@
 #ifndef GPIOCONTROL_GPIOCONTROL_H_
 #define GPIOCONTROL_GPIOCONTROL_H_
 
-/* === TYPES ======================================================================= */
+/* === DEFINES ===================================================================== */
 #define BUTTON_RIGHT_ARROW 7
 #define BUTTON_LEFT_ARROW  3
 #define BUTTON_ENTER       2

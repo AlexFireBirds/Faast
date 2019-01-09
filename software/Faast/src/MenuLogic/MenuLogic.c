@@ -4,8 +4,6 @@
  *  Created on: 3 Jan 2019
  *      Author: pi
  */
-
-
 /* === INCLUDE FILES =============================================================== */
 #include <stdio.h>
 #include "MenuLogic.h"
@@ -23,8 +21,7 @@ pageContent menu[]={
 };
 
 
-/* === CONSTANTS =================================================================== */
-
+/* === DEFINITIONS ================================================================= */
 void MenuLogic_NextPage(void)
 {
 	int numberOfMenuPages = sizeof(menu)/sizeof(pageContent);
