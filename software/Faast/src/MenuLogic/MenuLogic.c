@@ -18,6 +18,7 @@ pageContent menu[]={
 	{SpaceOdyssey, 	"Space ", 				ActionControl_PerformSpaceOdyssey},
 	{Breathing, 	"Breath like Vader ",	ActionControl_PerformBreathing},
 	{Father, 		"I am your father ", 	ActionControl_PerformIAmYourFather},
+	{BeerOrder,  	"Order some beer",		ActionControl_PerformBeerOrder},
 	{Help, 			"Help ", 				MenuLogic_ShowAllMenuPages}
 };
 

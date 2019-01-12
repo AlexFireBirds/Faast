@@ -16,6 +16,11 @@ typedef enum menuPages
 	Breathing,
 	Father,
 	Help,
+	BeerOrder,
+	FlyMeToTheMoon,
+	RadlerOrder,
+	SmirnoffOrder,
+	Hello,
 	NumberOfMenuPages
 } MenuPages;
 

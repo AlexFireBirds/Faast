@@ -33,8 +33,6 @@ int main(void)
 	// Demo lcd
 	//LcdDriver_Test();
 
-
-
 	// Demo with hardware button inputs
 	while(1)
 	{

@@ -22,3 +22,28 @@ void ActionControl_PerformBreathing(void)
 {
 	system("omxplayer /home/pi/Faast/sounds/Breathing.wav");
 }
+
+void ActionControl_PerformBeerOrder(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/RoboBeerOrder.wav");
+}
+
+void ActionControl_PerformFlyMeToTheMoon(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/FlyMeToTheMoon.wav");
+}
+
+void ActionControl_PerformRadlerOrder(void)
+{
+
+}
+
+void ActionControl_PerformSmirnoffOrder(void)
+{
+
+}
+
+void ActionControl_PerformHello(void)
+{
+
+}
