@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include "MenuLogic.h"
 #include "../ActionControl/ActionControl.h"
+#include "../LcdDriver/LcdDriver.h"
 
 /* === LOCAL VARIABLES ============================================================= */
 int _actualPageIndex = 0;
@@ -32,7 +33,12 @@ void MenuLogic_NextPage(void)
 	{
 		_actualPageIndex = 0;
 	}
+
+	// console output
 	printf("%s\n", menu[_actualPageIndex].text);
+
+	// lcd output
+	LcdDriver_Write(menu[_actualPageIndex].text);
 }
 
 void MenuLogic_PreviousPage(void)
@@ -47,7 +53,11 @@ void MenuLogic_PreviousPage(void)
 	{
 		_actualPageIndex--;
 	}
+	// console output
 	printf("%s\n", menu[_actualPageIndex].text);
+
+	// lcd output
+	LcdDriver_Write(menu[_actualPageIndex].text);
 }
 
 

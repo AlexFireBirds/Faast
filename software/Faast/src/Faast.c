@@ -15,6 +15,7 @@
 #include <wiringPi.h>
 #include "MenuLogic/MenuLogic.h"
 #include "GpioControl/GpioControl.h"
+#include "LcdDriver/LcdDriver.h"
 
 int main(void)
 {
@@ -23,6 +24,16 @@ int main(void)
 
 	// Initialize gpio control
 	GpioControl_Initialize();
+
+	// Initialize lcd
+	LcdDriver_Initialize();
+
+	LcdDriver_Write("Init complete   Enjoy FAAST!");
+
+	// Demo lcd
+	//LcdDriver_Test();
+
+
 
 	// Demo with hardware button inputs
 	while(1)

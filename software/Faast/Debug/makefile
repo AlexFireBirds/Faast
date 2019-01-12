@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/MenuLogic/subdir.mk
+-include src/LcdDriver/subdir.mk
 -include src/GpioControl/subdir.mk
 -include src/ActionControl/subdir.mk
 -include src/subdir.mk
