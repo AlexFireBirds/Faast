@@ -26,8 +26,12 @@ void ActionControl_PerformRadlerOrder(void);
 
 void ActionControl_PerformSmirnoffOrder(void);
 
-void ActionControl_PerformHello(void);
+void ActionControl_PerformHelloHowAreYou(void);
 
 void ActionControl_PerformMineralOrder(void);
+
+void ActionControl_PerformIAmFine(void);
+
+void ActionControl_PerformWhoAmI(void);
 
 #endif /* ACTIONCONTROL_ACTIONCONTROL_H_ */

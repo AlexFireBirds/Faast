@@ -14,15 +14,17 @@
 int _actualPageIndex = 0;
 
 pageContent menu[]={
-	{Hello, 			"Say Hello", 						ActionControl_PerformHello},
+	{Hello, 			"Say Hello, how  are you?", 		ActionControl_PerformHelloHowAreYou},
+	{ImFine,			"Thx, I am fine",					ActionControl_PerformIAmFine},
+	{WhoAmI, 			"Who am I?", 						ActionControl_PerformWhoAmI},
 	{SpaceOdyssey, 		"Space ", 							ActionControl_PerformSpaceOdyssey},
-	{Breathing, 		"Breath like Vader ",				ActionControl_PerformBreathing},
+	{Breathing, 		"Breath like     Darth Vader ",		ActionControl_PerformBreathing},
 	{Father, 			"I am your father ", 				ActionControl_PerformIAmYourFather},
 	{BeerOrder,  		"Order some beer",					ActionControl_PerformBeerOrder},
-	{RadlerOrder, 		"Order some Radler",				ActionControl_PerformRadlerOrder},
-	{SmirnoffOrder,		"Order some Smirnoff",				ActionControl_PerformSmirnoffOrder},
-	{MineralOrder, 		"Order some Mineral",				ActionControl_PerformMineralOrder},
-	{FlyMeToTheMoon,	"Fly me to the moon",				ActionControl_PerformFlyMeToTheMoon},
+	{RadlerOrder, 		"Order some      Radler",	 		ActionControl_PerformRadlerOrder},
+	{SmirnoffOrder,		"Order some      Smirnoff",			ActionControl_PerformSmirnoffOrder},
+	{MineralOrder, 		"Order some      Mineral",			ActionControl_PerformMineralOrder},
+	{FlyMeToTheMoon,	"Fly me to the   moon",				ActionControl_PerformFlyMeToTheMoon},
 	{FlyMeToTheMoonLong,"Fly me to the moon long version",	ActionControl_PerformFlyMeToTheMoonLong},
 	{Help, 				"Help ", 							MenuLogic_ShowAllMenuPages}
 };

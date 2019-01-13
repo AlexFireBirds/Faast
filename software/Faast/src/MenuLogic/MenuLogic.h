@@ -12,6 +12,8 @@
 typedef enum menuPages
 {
 	Home,
+	ImFine,
+	WhoAmI,
 	SpaceOdyssey,
 	Breathing,
 	Father,

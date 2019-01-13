@@ -48,12 +48,22 @@ void ActionControl_PerformSmirnoffOrder(void)
 	system("omxplayer /home/pi/Faast/sounds/RoboSmirnoffOrder.wav");
 }
 
-void ActionControl_PerformHello(void)
+void ActionControl_PerformHelloHowAreYou(void)
 {
-	system("omxplayer /home/pi/Faast/sounds/Hello.wav");
+	system("omxplayer /home/pi/Faast/sounds/HelloHowAreYou.wav");
 }
 
 void ActionControl_PerformMineralOrder(void)
 {
 	system("omxplayer /home/pi/Faast/sounds/RoboMineralOrder.wav");
+}
+
+void ActionControl_PerformIAmFine(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/ImFine.wav");
+}
+
+void ActionControl_PerformWhoAmI(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/WhoAmI.wav");
 }
