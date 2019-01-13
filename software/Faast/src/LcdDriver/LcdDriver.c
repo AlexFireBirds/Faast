@@ -137,15 +137,12 @@ void typeln(const char *s)   {
 
 void LcdDriver_Write(const char *s)
 {
-	int stringSize = 0;
 	int numberOfCharactersWrote = 0;
 
 	LcdDriver_Clear();
 
-	stringSize = sizeof(*s)/sizeof(char);
 
 	SetCursorToRow(LINE1);
-
 
 	while ( *s )
 	{
@@ -189,11 +186,11 @@ void lcd_byte(int bits, int mode)   {
 
 void lcd_toggle_enable(int bits)   {
   // Toggle enable pin on LCD display
-  delayMicroseconds(500);
+  delayMicroseconds(100);
   wiringPiI2CReadReg8(_fd, (bits | ENABLE));
-  delayMicroseconds(500);
+  delayMicroseconds(100);
   wiringPiI2CReadReg8(_fd, (bits & ~ENABLE));
-  delayMicroseconds(500);
+  delayMicroseconds(100);
 }
 
 
