@@ -8,6 +8,7 @@
 /* === INCLUDE FILES =============================================================== */
 #include <wiringPi.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include "GpioControl.h"
 #include "../MenuLogic/MenuLogic.h"
@@ -31,6 +32,10 @@ static void InterruptHandlerNextPage(void)
 	if(interruptTime - lastNextPageInterrupt > debounceTime)
 	{
 		MenuLogic_NextPage();
+		if(digitalRead(BUTTON_ENTER) == 1 && digitalRead(BUTTON_LEFT_ARROW) == 1)
+		{
+			system("sudo reboot");
+		}
 	}
 
 	lastNextPageInterrupt = interruptTime;
@@ -42,6 +47,10 @@ static void InterruptHandlerPreviousPage(void)
 	if(interruptTime - lastPreviousPageInterrupt > debounceTime)
 	{
 		MenuLogic_PreviousPage();
+		if(digitalRead(BUTTON_ENTER) == 1 && digitalRead(BUTTON_RIGHT_ARROW) == 0)
+		{
+			system("sudo reboot");
+		}
 	}
 
 	lastPreviousPageInterrupt = interruptTime;
@@ -53,6 +62,10 @@ static void InterruptHandlerExecutePageAction(void)
 	if(interruptTime - lastExecuteActionPageInterrupt > debounceTimeAction)
 	{
 		MenuLogic_ExecuteActualPageAction();
+		if(digitalRead(BUTTON_LEFT_ARROW) == 1 && digitalRead(BUTTON_RIGHT_ARROW) == 0)
+		{
+			system("sudo reboot");
+		}
 	}
 
 	lastExecuteActionPageInterrupt = interruptTime;
