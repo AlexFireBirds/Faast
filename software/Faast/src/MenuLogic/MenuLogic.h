@@ -18,8 +18,10 @@ typedef enum menuPages
 	Help,
 	BeerOrder,
 	FlyMeToTheMoon,
+	FlyMeToTheMoonLong,
 	RadlerOrder,
 	SmirnoffOrder,
+	MineralOrder,
 	Hello,
 	NumberOfMenuPages
 } MenuPages;
@@ -29,7 +31,7 @@ typedef void (*pageActionPointer)(void);
 typedef struct
 {
 	MenuPages page;
-	char text[20];
+	char text[32];
 	pageActionPointer action;
 } pageContent;
 

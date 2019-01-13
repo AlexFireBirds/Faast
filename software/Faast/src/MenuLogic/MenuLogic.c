@@ -14,13 +14,17 @@
 int _actualPageIndex = 0;
 
 pageContent menu[]={
-	{Home, 			"Home ", 				ActionControl_PerformSpaceOdyssey},
-	{SpaceOdyssey, 	"Space ", 				ActionControl_PerformSpaceOdyssey},
-	{Breathing, 	"Breath like Vader ",	ActionControl_PerformBreathing},
-	{Father, 		"I am your father ", 	ActionControl_PerformIAmYourFather},
-	{BeerOrder,  	"Order some beer",		ActionControl_PerformBeerOrder},
-	{FlyMeToTheMoon,"Fly me to the moon",	ActionControl_PerformFlyMeToTheMoon},
-	{Help, 			"Help ", 				MenuLogic_ShowAllMenuPages}
+	{Hello, 			"Say Hello", 						ActionControl_PerformHello},
+	{SpaceOdyssey, 		"Space ", 							ActionControl_PerformSpaceOdyssey},
+	{Breathing, 		"Breath like Vader ",				ActionControl_PerformBreathing},
+	{Father, 			"I am your father ", 				ActionControl_PerformIAmYourFather},
+	{BeerOrder,  		"Order some beer",					ActionControl_PerformBeerOrder},
+	{RadlerOrder, 		"Order some Radler",				ActionControl_PerformRadlerOrder},
+	{SmirnoffOrder,		"Order some Smirnoff",				ActionControl_PerformSmirnoffOrder},
+	{MineralOrder, 		"Order some Mineral",				ActionControl_PerformMineralOrder},
+	{FlyMeToTheMoon,	"Fly me to the moon",				ActionControl_PerformFlyMeToTheMoon},
+	{FlyMeToTheMoonLong,"Fly me to the moon long version",	ActionControl_PerformFlyMeToTheMoonLong},
+	{Help, 				"Help ", 							MenuLogic_ShowAllMenuPages}
 };
 
 

@@ -33,17 +33,27 @@ void ActionControl_PerformFlyMeToTheMoon(void)
 	system("omxplayer /home/pi/Faast/sounds/FlyMeToTheMoon.wav");
 }
 
+void ActionControl_PerformFlyMeToTheMoonLong(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/FlyMeToTheMoonLong.wav");
+}
+
 void ActionControl_PerformRadlerOrder(void)
 {
-
+	system("omxplayer /home/pi/Faast/sounds/RoboRadlerOrder.wav");
 }
 
 void ActionControl_PerformSmirnoffOrder(void)
 {
-
+	system("omxplayer /home/pi/Faast/sounds/RoboSmirnoffOrder.wav");
 }
 
 void ActionControl_PerformHello(void)
 {
+	system("omxplayer /home/pi/Faast/sounds/Hello.wav");
+}
 
+void ActionControl_PerformMineralOrder(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/RoboMineralOrder.wav");
 }

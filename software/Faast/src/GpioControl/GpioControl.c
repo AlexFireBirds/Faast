@@ -15,6 +15,7 @@
 
 /* === DEFINES ===================================================================== */
 #define debounceTime 500
+#define debounceTimeAction 1000
 
 
 /* === LOCAL VARIABLES ============================================================= */
@@ -49,7 +50,7 @@ static void InterruptHandlerPreviousPage(void)
 static void InterruptHandlerExecutePageAction(void)
 {
 	unsigned long interruptTime = millis();
-	if(interruptTime - lastExecuteActionPageInterrupt > debounceTime)
+	if(interruptTime - lastExecuteActionPageInterrupt > debounceTimeAction)
 	{
 		MenuLogic_ExecuteActualPageAction();
 	}
