@@ -24,6 +24,7 @@ typedef enum menuPages
 	RadlerOrder,
 	SmirnoffOrder,
 	MineralOrder,
+	RegisterSound,
 	Hello,
 	NumberOfMenuPages
 } MenuPages;

@@ -24,6 +24,7 @@ pageContent menu[]={
 	{RadlerOrder, 		"Order some      Radler",	 		ActionControl_PerformRadlerOrder},
 	{SmirnoffOrder,		"Order some      Smirnoff",			ActionControl_PerformSmirnoffOrder},
 	{MineralOrder, 		"Order some      Mineral",			ActionControl_PerformMineralOrder},
+	{RegisterSound,		"Kaching!", 						ActionControl_PerformRegisterSound},
 	{FlyMeToTheMoon,	"Fly me to the   moon",				ActionControl_PerformFlyMeToTheMoon},
 	{FlyMeToTheMoonLong,"Fly me to the moon long version",	ActionControl_PerformFlyMeToTheMoonLong},
 	{Help, 				"Help ", 							MenuLogic_ShowAllMenuPages}

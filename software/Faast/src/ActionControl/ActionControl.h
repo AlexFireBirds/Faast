@@ -30,6 +30,8 @@ void ActionControl_PerformHelloHowAreYou(void);
 
 void ActionControl_PerformMineralOrder(void);
 
+void ActionControl_PerformRegisterSound(void);
+
 void ActionControl_PerformIAmFine(void);
 
 void ActionControl_PerformWhoAmI(void);

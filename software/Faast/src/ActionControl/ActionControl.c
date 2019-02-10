@@ -58,6 +58,11 @@ void ActionControl_PerformMineralOrder(void)
 	system("omxplayer /home/pi/Faast/sounds/RoboMineralOrder.wav");
 }
 
+void ActionControl_PerformRegisterSound(void)
+{
+	system("omxplayer /home/pi/Faast/sounds/CashRegister.wav");
+}
+
 void ActionControl_PerformIAmFine(void)
 {
 	system("omxplayer /home/pi/Faast/sounds/ImFine.wav");
