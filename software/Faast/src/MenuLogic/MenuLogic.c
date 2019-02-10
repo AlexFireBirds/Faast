@@ -80,6 +80,11 @@ void MenuLogic_ExecuteActualPageAction(void)
 	menu[_actualPageIndex].action();
 }
 
+pageActionPointer MenuLogic_GetActualPageAction(void)
+{
+	return menu[_actualPageIndex].action;
+}
+
 void MenuLogic_ShowAllMenuPages(void)
 {
 	int numberOfMenuEntries = sizeof(menu)/sizeof(pageContent);

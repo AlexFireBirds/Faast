@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include "GpioControl.h"
 #include "../MenuLogic/MenuLogic.h"
+#include "../EventControl/EventControl.h"
 
 
 /* === DEFINES ===================================================================== */
@@ -61,7 +62,14 @@ static void InterruptHandlerExecutePageAction(void)
 	unsigned long interruptTime = millis();
 	if(interruptTime - lastExecuteActionPageInterrupt > debounceTimeAction)
 	{
-		MenuLogic_ExecuteActualPageAction();
+		// Add event only if no event is already running
+		if(!EventControl_IsEventPending())
+		{
+			EventControl_SetEventRunning();
+			EventControl_SetEvent(MenuLogic_GetActualPageAction());
+		}
+
+		//MenuLogic_ExecuteActualPageAction();
 		if(digitalRead(BUTTON_LEFT_ARROW) == 1 && digitalRead(BUTTON_RIGHT_ARROW) == 0)
 		{
 			system("sudo reboot");

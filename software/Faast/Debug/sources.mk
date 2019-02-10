@@ -17,5 +17,6 @@ src/MenuLogic \
 src/LcdDriver \
 src/GpioControl \
 src \
+src/EventControl \
 src/ActionControl \
 

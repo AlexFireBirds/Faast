@@ -16,6 +16,7 @@
 #include "MenuLogic/MenuLogic.h"
 #include "GpioControl/GpioControl.h"
 #include "LcdDriver/LcdDriver.h"
+#include "EventControl/EventControl.h"
 
 int main(void)
 {
@@ -28,6 +29,9 @@ int main(void)
 	// Initialize lcd
 	LcdDriver_Initialize();
 
+	// Initialize event control
+	EventControl_ClearEventPending();
+
 	LcdDriver_Write("Init complete   Enjoy FAAST!");
 
 	// Demo lcd
@@ -36,6 +40,12 @@ int main(void)
 	// Demo with hardware button inputs
 	while(1)
 	{
+		if(EventControl_IsEventPending())
+		{
+			EventControl_ExecuteEvent();
+			delay(1000);
+			EventControl_ClearEventPending();
+		}
 		delay(1);
 	}
 

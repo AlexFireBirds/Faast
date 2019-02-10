@@ -48,6 +48,8 @@ char* MenuLogic_ReturnMenuTextOfActualPage(void);
 
 void MenuLogic_ExecuteActualPageAction(void);
 
+pageActionPointer MenuLogic_GetActualPageAction(void);
+
 void MenuLogic_ShowAllMenuPages(void);
 
 

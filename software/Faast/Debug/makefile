@@ -11,6 +11,7 @@ RM := rm -rf
 -include src/MenuLogic/subdir.mk
 -include src/LcdDriver/subdir.mk
 -include src/GpioControl/subdir.mk
+-include src/EventControl/subdir.mk
 -include src/ActionControl/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
